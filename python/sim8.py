@@ -29,9 +29,15 @@ def build_payload(variable_1, variable_2, variable_3):
 
 def post_request(payload):
     # Creates the headers for the HTTP requests
-    url = "http://industrial.api.ubidots.com"
-    url = "{}/api/v1.6/devices/{}".format(url, DEVICE_LABEL)
-    headers = {"X-Auth-Token": TOKEN, "Content-Type": "application/json"}
+
+    # Ubidots API
+    # url = "http://industrial.api.ubidots.com"
+    # url = "{}/api/v1.6/devices/{}".format(url, DEVICE_LABEL)
+    # headers = {"X-Auth-Token": TOKEN, "Content-Type": "application/json"}
+
+    # own API
+    url = "http://localhost/iot_board/api/save.php"
+    headers = {"Content-Type": "application/json"}
 
     # Makes the HTTP requests
     status = 400
