@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Contoh Dashboard</title>
+        <!-- Bootstrap -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <table id="contoh" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>temperature</th>
+                    <th>humidity</th>
+                    <th>position</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>temperature</th>
+                    <th>humidity</th>
+                    <th>position</th>
+                </tr>
+            </tfoot>
+        </table>
+        <script>
+            $(document).ready(function() {
+                $('#contoh').DataTable( {
+                    "processing": true,
+                    "serverSide": true,
+                    "ajax": "api/read.php",
+                    "columns": [
+                        { "data": "id" },
+                        { "data": "temperature" },
+                        { "data": "humidity" },
+                        { "data": "position" }
+                    ]
+                } );
+            } );
+        </script> 
+    </body>
+</html>

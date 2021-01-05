@@ -42,5 +42,24 @@ class Iotdevice{
         return false;
         
     }
+
+    // fungsi read data
+    public function read(){
+  
+        //select all data
+        $query = "SELECT
+                    *
+                FROM
+                    " . $this->table_name . "
+                ORDER BY
+                    id";
+
+        
+    
+        $stmt = $this->conn->prepare( $query );
+        $stmt->execute();
+    
+        return $stmt;
+    }
 }
 ?>

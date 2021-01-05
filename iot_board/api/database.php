@@ -5,7 +5,7 @@ class Database{
     private $host = "localhost";
     private $db_name = "iot_db";
     private $username = "root";
-    private $password = "";
+    private $password = "123456";
     public $conn;
   
     // fungsi koneksi database
